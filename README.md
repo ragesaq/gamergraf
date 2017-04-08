@@ -1,7 +1,8 @@
 # gamergraf
 ![https://snapshot.raintank.io/dashboard/snapshot/2t5C4T4wE77QIQHO1QmFc2dfXRj1zBlm](http://i.imgur.com/k14gj8B.png "gamergraf dashboard")
 
-This is my first docker and github project, evolved out of a few things I've found here and there towards doing some really neat monitoring of Windows systems with Grafana, Graphite, CollectD and MSI Afterburner+Remote Server. The backend is pretty polished at this point, you shouldn't have to do anything other than docker-compose up be it on windows or a remote linux box. You can see an exported interactive snapshot of gamergraf (a feature of grafana) here: https://snapshot.raintank.io/dashboard/snapshot/2t5C4T4wE77QIQHO1QmFc2dfXRj1zBlm  
+This is my first docker and github project, evolved out of a few things I've found here and there towards doing some really neat monitoring of Windows systems with Grafana, Graphite, CollectD and MSI Afterburner+Remote Server. Due to the reliance on Afterburner + Afterburner Remote Server this project is unfortunately nVidia only right now. If you know of a good instrumentation application that can get CPU/GPU/FPS stats and serve it up accurately at 1s resolution I would love to hear about it!  
+The backend is pretty polished at this point, you shouldn't have to do anything other than docker-compose up be it on windows or a remote linux box. You can see an exported interactive snapshot of gamergraf (a feature of grafana) here: https://snapshot.raintank.io/dashboard/snapshot/2t5C4T4wE77QIQHO1QmFc2dfXRj1zBlm  
   
 Note mostly for VR users: You must maintain focus of the game application window if you want Afterburner to log the fps/frametime data.  
   
