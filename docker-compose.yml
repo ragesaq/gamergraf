@@ -1,0 +1,30 @@
+version: '2'
+services:
+  graphite:
+    build: graphite
+    restart: always
+    container_name: gamergraf-graphite
+    ports:
+        - "8000:8000"
+        - "2003:2003"
+        - "2004:2004"
+    volumes:
+        - "./graphite/data:/opt/graphite/storage/whisper"
+    environment:
+        - HOST_IP=1.1.1.1
+        - HOST_PORT=8098
+        - HOST=computername
+        - AFTERBURNER_PASSWORD=password
+
+  grafana:
+    build: grafana
+    restart: always
+    container_name: gamergraf-grafana
+    ports:
+        - "3000:3000"
+    volumes:
+        - "./grafana/data:/var/lib/grafana"
+    links:
+        - graphite
+    environment:
+        - GF_SECURITY_ADMIN_PASSWORD=password
