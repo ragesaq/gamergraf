@@ -1,4 +1,6 @@
 # gamergraf
+![https://github.com/ragesaq/gamergraf](http://i.imgur.com/k14gj8B.png "amergraf dashboard")
+
 This is my first docker and github project, evolved out of a few things I've found here and there towards doing some really neat monitoring of Windows systems with Grafana, Graphite, CollectD and MSI Afterburner+Remote Server. The backend is pretty polished at this point, you shouldn't have to do anything other than docker-compose up be it on windows or a remote linux box.  
   
 Note mostly for VR users: You must maintain focus of the game application window if you want Afterburner to log the fps/frametime data.  
