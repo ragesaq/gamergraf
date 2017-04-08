@@ -6,6 +6,8 @@ The backend is pretty polished at this point, you shouldn't have to do anything 
   
 Note mostly for VR users: You must maintain focus of the game application window if you want Afterburner to log the fps/frametime data. 
   
+Credit to ycnz for hooking me up with the collectd curl_xml plugin settings that took my project to the next level!  
+  
 ## Dependencies:  Download and install all of this software
 The software pieces that make up this solution are divded up into two different functions, the backend and the instrumentation. The backend can be installed on the same system the instrumentation is installed on, but it can also be installed on another system on the network provided it has a solid network connection. With the rate of polling collectd is configured for I am not sure how well a wireless network connection would stand up.  
 The instrumentation software has to run on the computer you want monitored, and some of the components might be something you use already.  
