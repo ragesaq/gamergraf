@@ -52,7 +52,7 @@ Launch the executable, then in the systray right click on it and change the two 
 2.3: Restart MSI Afterburner Remote Server  
 ### Step 3:
 #### Docker container download and config
-Clone/download this project to your desired location, and then edit the docker-compose.yml file and change the five environment variables.  
+Clone/download this project to your desired location, and then edit the docker-compose.yml file and change the five environment variables.  *Note* I have some reports of issues using git on windows to clone the project and the container not building/working correctly. Downloading the zip from this page and extracting it resolved that issue. I'm not sure what the problem is related to and I am looking into it.
 3.1: HOST_IP - Enter the IP address of the PC you want to monitor  
 3.2: HOST_PORT - Enter the port you entered in Step 2.1  
 3.3: HOST - enter the hostname or any name you would like  
