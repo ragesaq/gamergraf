@@ -22,7 +22,8 @@ Docker Compose is also required.
 Docker for Windows 10, which includes Docker Compose - https://download.docker.com/win/stable/InstallDocker.msi  
 Docker for Linux installation instructions - https://docs.docker.com/engine/getstarted/step_one/#step-2-install-docker  
 Docker Compose for linux - https://github.com/docker/compose/releases  
-  
+Gamergraf docker container - https://github.com/ragesaq/gamergraf/archive/master.zip
+
 For those who don't know what Docker is, docker is a platform for packaging together software packages and running them in their own containers. Its a little bit like running a virtual machine but its really focused around tight packaged and preconfigured applications. It allows for applications like this to run on any operating system that can run docker and is extremely simple to install and run.  
 Docker Compose is a small utility that enhances some functions of docker by providing a simple config file that can be used to easily define how the container runs.  
 The docker container running the backend can run on any system that has a solid network connection to the system you want to monitor.  
