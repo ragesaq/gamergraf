@@ -68,7 +68,7 @@ EXPOSE \
 # Carbon cache query
 7002
 
-VOLUME ["/opt/graphite/conf", "/opt/graphite/storage/whisper"]
+VOLUME ["/opt/graphite/conf", "/opt/graphite/storage"]
 RUN chmod +x /etc/collectd/collectd-conf.sh
 RUN chmod +x /etc/collectd/entrypoint.sh
 RUN rm /etc/collectd/collectd.conf
