@@ -43,22 +43,24 @@ I've used several different software components over time for getting good instr
 ### Step 1: 
 #### MSI Afterburner
 1.1: Open afterburner, go to settings, and then go to the monitoring tab. Make sure you have the following things checked for monitoring:  
-1.2: Power, GPU temperature, GPU usage, GPU voltage, Fan speed, Fan tachometer, Core clock, Memory clock, Memory usage, Temp limit, Power limit, Voltage limit, No load limit, Framerate, Frametime, CPU temperature, CPU1 usage, CPU2 usage, CPU3 usage, CPU4 usage, CPU usage, RAM usage.  
+1.2: Power, GPU temperature, GPU usage, GPU voltage, Fan speed, Fan tachometer, Core clock, Memory clock, Memory usage, Temp limit, Power limit, Voltage limit, No load limit, Framerate, Frametime, CPU temperature, CPU1 usage, CPU2 usage, CPU3 usage, CPU4 usage, CPU usage, RAM usage, Pagefile usage.  
 If you have more CPU cores be sure to check the CPUX usage for them. You will need to add them to your grafana dashboard CPU charts, which are fairly simple to edit.    
 ### Step 2:
 #### MSI Afterburner Remote Server
 Launch the executable, then in the systray right click on it and change the two following settings.  
-2.1: HTTP Listener - Set to 8098 or a port of your choice  
-2.2: Security - set your password to a password of your choosing  
+##### Optional Afterburner port and password settings
+Change the Afterburner remote settings
+2.1: HTTP Listener - Default is 82, change this if you would like to use a different port, be sure to update this in step 3.3
+2.2: Security - Default is 17cc95b4017d496f82, change this if you would like to use a different password, be sure to update step 3.4
 2.3: Restart MSI Afterburner Remote Server  
 ### Step 3:
 #### Docker container download and config
 Clone/download this project to your desired location, and then edit the docker-compose.yml file and change the five environment variables.  *Note* I have some reports of issues using git on windows to clone the project and the container not building/working correctly. Downloading the zip from this page and extracting it resolved that issue. I'm not sure what the problem is related to and I am looking into it.
 3.1: HOST_IP - Enter the IP address of the PC you want to monitor  
-3.2: HOST_PORT - Enter the port you entered in Step 2.1  
-3.3: HOST - enter the hostname or any name you would like  
-3.4: AFTERBURNER_PASSWORD - Enter the password you defined in Step 2.2  
-3.5: GF_SECURITY_ADMIN_PASSWORD - Enter the password for grafana to a password of your choosing  
+3.2: HOST - enter the hostname or any name you would like
+3.3: HOST_PORT - (Optional) Change this if you changed the port in Step 2.1  
+3.4: AFTERBURNER_PASSWORD - (Optional) Change this if you changed the password in Step 2.2  
+3.5: GF_SECURITY_ADMIN_PASSWORD - (Optional) Enter the password for grafana to a password of your choosing  
 ### Step 4:
 #### Running the docker container
 4.1: From a command-line in the folder containing the gamergraf project run the command "docker-compose build", this can take a few minutes during which the containers are installed and configured.  
@@ -66,8 +68,7 @@ Clone/download this project to your desired location, and then edit the docker-c
 ### Step 5:
 #### Log into the grafana page
 5.1: Open a web browser and navigate to http://<ip address of system running docker>:3000. If you ran this on your local PC you can load it up with http://localhost:3000  
-5.2: Login with the username 'admin' and the password you entered in 3.5  
-5.3: Enjoy!  
+5.2: Enjoy!  
   
 Note: If you have more than 4 cores you will want to select 'edit' under the CPU Utilization Detail graph, duplicate one of the CPU queries, change the query to target CPU5 or CPU6 etc, and then change the alias name to reflect that CPU. Once you complete that click back to dashboard at the top, and then click save.  
   
