@@ -5,9 +5,9 @@ services:
     restart: always
     container_name: gamergraf-graphite
     ports:
-        - "18000:18000"
-        - "12003:12003"
-        - "12004:12004"
+        - "8000:8000"
+        - "2003:2003"
+        - "2004:2004"
     volumes:
         - "./graphite/data:/opt/graphite/storage/whisper"
     environment:
