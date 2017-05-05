@@ -12,9 +12,9 @@ services:
         - "./graphite/data:/opt/graphite/storage/whisper"
     environment:
         - HOST_IP=1.1.1.1
-        - HOST_PORT=8098
         - HOST=computername
-        - AFTERBURNER_PASSWORD=password
+        - HOST_PORT=82
+        - AFTERBURNER_PASSWORD=17cc95b4017d496f82
 
   grafana:
     build: grafana
