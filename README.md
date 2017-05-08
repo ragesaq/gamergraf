@@ -63,19 +63,24 @@ Clone/download this project to your desired location, and then edit the docker-c
 3.5: GF_SECURITY_ADMIN_PASSWORD - (Optional) Enter the password for grafana to a password of your choosing  
 ### Step 4:
 #### Running the docker container
-4.1: From a command-line in the folder containing the gamergraf project run the command "docker-compose build", this can take a few minutes during which the containers are installed and configured.  
-4.2: From a command-line in the folder containing the gamergraf project run the command "docker-compose up -d", this will start the containers and only takes a second or two.  
+4.1: Run the gamergraf-start batch file in the gamergraf folder. This runs the command 'docker-compose build' which downloads and sets up all of the docker containers and then runs the command 'docker-compose up -d' which launches the containers. The build process can be a little lengthy if this is the first run.  
 ### Step 5:
 #### Log into the grafana page
 5.1: Open a web browser and navigate to http://<ip address of system running docker>:3000. If you ran this on your local PC you can load it up with http://localhost:3000  
 5.2: Enjoy!  
+  
+The container services should automatically launch on reboot, so as long as you want to run this software you don't have to do anything.
+  
+If you want to prevent the software from running automatically you should run the 'gamergraf-uninstall' batch file, which will run the 'docker-compose down' command. This will stop the container and then remove them from your system. The data for the database is still retained in the gamergraf folder, so you can run the gamergraf-start script again and resume monitoring with the data you already collected.  
+  
+There are a few other batch scripts to run some docker commands in the gamergraf folder that are fairly self explanitory, I'll give them a more proepr writeup later.  
   
 Note: If you have more than 4 cores you will want to select 'edit' under the CPU Utilization Detail graph, duplicate one of the CPU queries, change the query to target CPU5 or CPU6 etc, and then change the alias name to reflect that CPU. Once you complete that click back to dashboard at the top, and then click save.  
   
 ## Removal
 Follow these steps to remove the components. To reinstall them just start from the installation at the top.  
 ### Docker Backend  
-1.1: From a command-line in the folder containing the gamergraf project run the command "docker-compose down". This stops the containers and removes their container images from the docker engine. The data stored in the database and any customizations you have made to grafana is not removed.  
+1.1: Run the 'gamergraf-uninstall' batch script in the gamergraf folder, this will run the 'docker-compose down' script which stops the service and removes the containers.
 1.2: Delete the folder the gamegraf project is stored in, this will delete the databases and all files related to the project.  
 1.3: Uninstall docker  
 ### Instrumentation
