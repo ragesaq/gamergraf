@@ -42,8 +42,9 @@ I've used several different software components over time for getting good instr
 ## Installation
 ### Step 1: 
 #### MSI Afterburner
-1.1: Open afterburner, go to settings, and then go to the monitoring tab. Make sure you have the following things checked for monitoring:  
-1.2: Power, GPU temperature, GPU usage, GPU voltage, Fan speed, Fan tachometer, Core clock, Memory clock, Memory usage, Temp limit, Power limit, Voltage limit, No load limit, Framerate, Frametime, CPU temperature, CPU1 usage, CPU2 usage, CPU3 usage, CPU4 usage, CPU usage, RAM usage, Pagefile usage.  
+1.1: Install MSI Afterburner. During the installation process it will ask you to install RTSS (RivaTuner Statistics Server), which you need to capture frametime/framerate, so be sure to install this too.
+1.2: Open afterburner, go to settings, and then go to the monitoring tab. Make sure you have the following things checked for monitoring:  
+1.3: Power, GPU temperature, GPU usage, GPU voltage, Fan speed, Fan tachometer, Core clock, Memory clock, Memory usage, Temp limit, Power limit, Voltage limit, No load limit, Framerate, Frametime, CPU temperature, CPU1 usage, CPU2 usage, CPU3 usage, CPU4 usage, CPU usage, RAM usage, Pagefile usage.  
 If you have more CPU cores be sure to check the CPUX usage for them. You will need to add them to your grafana dashboard CPU charts, which are fairly simple to edit.    
 ### Step 2:
 #### MSI Afterburner Remote Server
