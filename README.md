@@ -56,15 +56,20 @@ Change the Afterburner remote settings
 2.3: Restart MSI Afterburner Remote Server  
 ### Step 3:
 #### Docker container download and config
-Clone/download this project to your desired location, and then edit the docker-compose.yml file and change the five environment variables.  *Note* I have some reports of issues using git on windows to clone the project and the container not building/working correctly. Downloading the zip from this page and extracting it resolved that issue. I'm not sure what the problem is related to and I am looking into it.
-3.1: HOST_IP - Enter the IP address of the PC you want to monitor  
-3.2: HOST - enter the hostname or any name you would like
-3.3: HOST_PORT - (Optional) Change this if you changed the port in Step 2.1  
-3.4: AFTERBURNER_PASSWORD - (Optional) Change this if you changed the password in Step 2.2  
-3.5: GF_SECURITY_ADMIN_PASSWORD - (Optional) Enter the password for grafana to a password of your choosing  
+3.1a: For Windows, download the project from here https://github.com/ragesaq/gamergraf/archive/master.zip, extract it to a folder of your choice and then use notepad or other file editor to edit the docker-compose.yml file and fill out the settings below. Note that yml files are fairly format sensitive to things like spacing (extra/fewer spaces), carriage returns, etc so try to preserve the file structure.  
+3.1b: For Linux, download the project or 'git clone https://github.com/ragesaq/gamergraf.git' and then edit the docker-compose.yml file and fill out the settings below.  
+  
+*Note* I have some reports of issues using git on windows to clone the project and the container not building/working correctly. It is probably some linux/windows git file conversion issues/settings. Downloading the zip from this page and extracting it resolved that issue. I'm not sure what the problem is related to and I am looking into it.
+3.2: HOST_IP - Enter the IP address of the PC you want to monitor  
+3.3: HOST - enter the hostname or any name you would like
+3.4: HOST_PORT - (Optional) Change this if you changed the port in Step 2.1  
+3.5: AFTERBURNER_PASSWORD - (Optional) Change this if you changed the password in Step 2.2  
+3.6: GF_SECURITY_ADMIN_PASSWORD - (Optional) Enter the password for grafana to a password of your choosing  
 ### Step 4:
 #### Running the docker container
-4.1: Run the gamergraf-start batch file in the gamergraf folder. This runs the command 'docker-compose build' which downloads and sets up all of the docker containers and then runs the command 'docker-compose up -d' which launches the containers. The build process can be a little lengthy if this is the first run.  
+4.1: Simplified Windows batch files: Run the gamergraf-start batch file in the gamergraf folder. This runs the command 'docker-compose build' which downloads and sets up all of the docker containers and then runs the command 'docker-compose up -d' which launches the containers. The build process can be a little lengthy if this is the first run.  
+*Optional*
+4.2: For command line control under Windows or Linux first run the build command from the folder the containerwas extracted to by running 'docker-compose build', and then run 'docker-compose up -d' to launch the containers.  
 ### Step 5:
 #### Log into the grafana page
 5.1: Open a web browser and navigate to http://<ip address of system running docker>:3000. If you ran this on your local PC you can load it up with http://localhost:3000  
