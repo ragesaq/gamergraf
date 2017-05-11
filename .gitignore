@@ -1,2 +1,3 @@
 grafana/data/sessions
-graphite/data/storage
+grafana/data/sessions/*
+graphite/data/storage/*
