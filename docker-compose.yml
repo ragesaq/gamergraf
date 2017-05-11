@@ -5,9 +5,9 @@ services:
     restart: always
     container_name: gamergraf-graphite
     ports:
-        - "8000:8000"
-        - "2003:2003"
-        - "2004:2004"
+        - "18000:8000"
+        - "12003:2003"
+        - "12004:2004"
     volumes:
         - "./graphite/data/storage/:/opt/graphite/storage/"
     environment:
