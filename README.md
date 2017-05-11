@@ -61,10 +61,10 @@ Change the Afterburner remote settings
   
 *Note* I have some reports of issues using git on windows to clone the project and the container not building/working correctly. It is probably some linux/windows git file conversion issues/settings. Downloading the zip from this page and extracting it resolved that issue. I'm not sure what the problem is related to and I am looking into it.
 3.2: HOST_IP - Enter the IP address of the PC you want to monitor  
-3.3: HOST - enter the hostname or any name you would like
-3.4: HOST_PORT - (Optional) Change this if you changed the port in Step 2.1  
-3.5: AFTERBURNER_PASSWORD - (Optional) Change this if you changed the password in Step 2.2  
-3.6: GF_SECURITY_ADMIN_PASSWORD - (Optional) Enter the password for grafana to a password of your choosing  
+3.3: HOST - enter the hostname of the PC you want to monitor
+3.4: HOST_PORT - (Optional) Change this if you changed the port in Step 2.1. By default it is 82
+3.5: AFTERBURNER_PASSWORD - (Optional) Change this if you changed the password in Step 2.2. By default it is 17cc95b4017d496f82 
+3.6: GF_SECURITY_ADMIN_PASSWORD - Enter a password for the 'admin' account used to log in to grafana. By default it is password.
 ### Step 4:
 #### Running the docker container
 4.1: Simplified Windows batch files: Run the gamergraf-start batch file in the gamergraf folder. This runs the command 'docker-compose build' which downloads and sets up all of the docker containers and then runs the command 'docker-compose up -d' which launches the containers. The build process can be a little lengthy if this is the first run.  
@@ -73,15 +73,14 @@ Change the Afterburner remote settings
 ### Step 5:
 #### Log into the grafana page
 5.1: Open a web browser and navigate to http://<ip address of system running docker>:3000. If you ran this on your local PC you can load it up with http://localhost:3000  
-5.2: Enjoy!  
+5.2: Log in with the username 'admin' and the grafana admin password you set in 3.6
+5.3: Enjoy!  
   
 The container services should automatically launch on reboot, so as long as you want to run this software you don't have to do anything.
   
 If you want to prevent the software from running automatically you should run the 'gamergraf-uninstall' batch file, which will run the 'docker-compose down' command. This will stop the container and then remove them from your system. The data for the database is still retained in the gamergraf folder, so you can run the gamergraf-start script again and resume monitoring with the data you already collected.  
   
 There are a few other batch scripts to run some docker commands in the gamergraf folder that are fairly self explanitory, I'll give them a more proepr writeup later.  
-  
-Note: If you have more than 4 cores you will want to select 'edit' under the CPU Utilization Detail graph, duplicate one of the CPU queries, change the query to target CPU5 or CPU6 etc, and then change the alias name to reflect that CPU. Once you complete that click back to dashboard at the top, and then click save.  
   
 ## Removal
 Follow these steps to remove the components. To reinstall them just start from the installation at the top.  
