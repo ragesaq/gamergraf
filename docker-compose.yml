@@ -11,8 +11,8 @@ services:
     volumes:
         - "./graphite/data/storage/:/opt/graphite/storage/"
     environment:
-        - HOST_IP=10.10.10.72
-        - HOST=SHUTTLE
+        - HOST_IP=1.1.1.1
+        - HOST=computername
         - HOST_PORT=82
         - AFTERBURNER_PASSWORD=17cc95b4017d496f82
 
