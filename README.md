@@ -20,6 +20,7 @@ I have developed and tested this docker container on both CentOS 7.3 and Windows
 Docker Compose is also required.  
   
 Docker for Windows 10, which includes Docker Compose - https://download.docker.com/win/stable/InstallDocker.msi  
+*Note you need to be sure to configure Docker for Windows to share whatever drive you want to run the grafana package from, and some Antivirus applications process and/or network protection can cause some issues enabling this.
 Docker for Linux installation instructions - https://docs.docker.com/engine/getstarted/step_one/#step-2-install-docker  
 Docker Compose for linux - https://github.com/docker/compose/releases  
 Gamergraf docker container - https://github.com/ragesaq/gamergraf/archive/master.zip
@@ -32,7 +33,8 @@ The docker container that runs the backend consists of [Grafana](http://www.graf
   
 ###  Instrumentation software
 #### MSI Afterburner
-You need to run this for the monitoring services provided - http://download.msi.com/uti_exe/vga/MSIAfterburnerSetup.zip
+You need to run this for the monitoring services provided - http://download.msi.com/uti_exe/vga/MSIAfterburnerSetup.zip  
+*Note: If you have a 1080ti I would recommend at least Afterburner v4.4 beta 7
   
 #### MSI Afterburner Remote Server
 Provides a simple web service that exposes the Afterburner monitored data for collectd to grab - http://download.msi.com/uti_exe/vga/MSIAfterburnerRemoteServer.zip
@@ -64,7 +66,6 @@ Change the Afterburner remote settings
 3.3: HOST - enter the hostname of the PC you want to monitor
 3.4: HOST_PORT - (Optional) Change this if you changed the port in Step 2.1. By default it is 82
 3.5: AFTERBURNER_PASSWORD - (Optional) Change this if you changed the password in Step 2.2. By default it is 17cc95b4017d496f82 
-3.6: GF_SECURITY_ADMIN_PASSWORD - Enter a password for the 'admin' account used to log in to grafana. By default it is password.
 ### Step 4:
 #### Running the docker container
 4.1: Simplified Windows batch files: Run the gamergraf-start batch file in the gamergraf folder. This runs the command 'docker-compose build' which downloads and sets up all of the docker containers and then runs the command 'docker-compose up -d' which launches the containers. The build process can be a little lengthy if this is the first run.  
@@ -73,7 +74,7 @@ Change the Afterburner remote settings
 ### Step 5:
 #### Log into the grafana page
 5.1: Open a web browser and navigate to http://<ip address of system running docker>:3000. If you ran this on your local PC you can load it up with http://localhost:3000  
-5.2: Log in with the username 'admin' and the grafana admin password you set in 3.6
+5.2: Log in with the username 'admin' and the password 'password'. You can change the password by clicking on the grafana logo in the top left, going to Admin and then going to Profile.
 5.3: Enjoy!  
   
 The container services should automatically launch on reboot, so as long as you want to run this software you don't have to do anything.
