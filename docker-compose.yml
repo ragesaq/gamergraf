@@ -26,5 +26,3 @@ services:
         - "./grafana/data:/var/lib/grafana"
     links:
         - graphite
-    environment:
-        - GF_SECURITY_ADMIN_PASSWORD=password
