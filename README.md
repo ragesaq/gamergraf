@@ -71,7 +71,9 @@ Change the Afterburner remote settings
 ### Step 4:
 #### Running the docker container
 4.1: Simplified Windows batch files: Run the gamergraf-start batch file in the gamergraf folder. This runs the command 'docker-compose build' which downloads and sets up all of the docker containers and then runs the command 'docker-compose up -d' which launches the containers. The build process can be a little lengthy if this is the first run.  
-*Optional*
+  
+*Optional*  
+  
 4.2: For command line control under Windows or Linux first run the build command from the folder the containerwas extracted to by running 'docker-compose build', and then run 'docker-compose up -d' to launch the containers.  
 ### Step 5:
 #### Log into the grafana page
