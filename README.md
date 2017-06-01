@@ -76,7 +76,7 @@ Change the Afterburner remote settings
 ### Step 5:
 #### Log into the grafana page
 5.1: Open a web browser and navigate to http://<ip address of system running docker>:3000. If you ran this on your local PC you can load it up with http://localhost:3000  
-5.2: Log in with the username 'admin' and the password 'password'. You can change the password by clicking on the grafana logo in the top left, going to Admin and then going to Profile.
+5.2: Log in with the username 'admin' and the password 'password'. You can change the password by clicking on the grafana logo in the top left, going to Admin and then going to Profile.  
 5.3: Enjoy!  
   
 The container services should automatically launch on reboot, so as long as you want to run this software you don't have to do anything.
