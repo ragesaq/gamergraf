@@ -54,9 +54,9 @@ If you have more CPU cores be sure to check the CPUX usage for them. You will ne
 #### MSI Afterburner Remote Server
 Launch the executable, then in the systray right click on it and change the two following settings.  
 ##### Optional Afterburner port and password settings
-Change the Afterburner remote settings
-2.1: HTTP Listener - Default is 82, change this if you would like to use a different port, be sure to update this in step 3.3
-2.2: Security - Default is 17cc95b4017d496f82, change this if you would like to use a different password, be sure to update step 3.4
+Change the Afterburner remote settings  
+2.1: HTTP Listener - Default is 82, change this if you would like to use a different port, be sure to update this in step 3.3  
+2.2: Security - Default is 17cc95b4017d496f82, change this if you would like to use a different password, be sure to update step 3.4  
 2.3: Restart MSI Afterburner Remote Server  
 ### Step 3:
 #### Docker container download and config
@@ -65,9 +65,9 @@ Change the Afterburner remote settings
   
 *Note* I have some reports of issues using git on windows to clone the project and the container not building/working correctly. It is probably some linux/windows git file conversion issues/settings. Downloading the zip from this page and extracting it resolved that issue. I'm not sure what the problem is related to and I am looking into it.
 3.2: HOST_IP - Enter the IP address of the PC you want to monitor  
-3.3: HOST - enter the hostname of the PC you want to monitor
-3.4: HOST_PORT - (Optional) Change this if you changed the port in Step 2.1. By default it is 82
-3.5: AFTERBURNER_PASSWORD - (Optional) Change this if you changed the password in Step 2.2. By default it is 17cc95b4017d496f82 
+3.3: HOST - enter the hostname of the PC you want to monitor  
+3.4: HOST_PORT - (Optional) Change this if you changed the port in Step 2.1. By default it is 82  
+3.5: AFTERBURNER_PASSWORD - (Optional) Change this if you changed the password in Step 2.2. By default it is 17cc95b4017d496f82  
 ### Step 4:
 #### Running the docker container
 4.1: Simplified Windows batch files: Run the gamergraf-start batch file in the gamergraf folder. This runs the command 'docker-compose build' which downloads and sets up all of the docker containers and then runs the command 'docker-compose up -d' which launches the containers. The build process can be a little lengthy if this is the first run.  
