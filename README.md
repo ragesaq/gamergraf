@@ -81,7 +81,7 @@ Change the Afterburner remote settings
 5.2: Log in with the username 'admin' and the password 'password'. You can change the password by clicking on the grafana logo in the top left, going to Admin and then going to Profile.  
 5.3: Enjoy!  
   
-The container services should automatically launch on reboot, so as long as you want to run this software you don't have to do anything.
+The container services should automatically launch on reboot, so as long as you want to run this software you don't have to do anything.  
   
 If you want to prevent the software from running automatically you should run the 'gamergraf-uninstall' batch file, which will run the 'docker-compose down' command. This will stop the container and then remove them from your system. The data for the database is still retained in the gamergraf folder, so you can run the gamergraf-start script again and resume monitoring with the data you already collected.  
   
@@ -89,10 +89,12 @@ There are a few other batch scripts to run some docker commands in the gamergraf
   
 ## Removal
 Follow these steps to remove the components. To reinstall them just start from the installation at the top.  
+  
 ### Docker Backend  
-1.1: Run the 'gamergraf-uninstall' batch script in the gamergraf folder, this will run the 'docker-compose down' script which stops the service and removes the containers.
+1.1: Run the 'gamergraf-uninstall' batch script in the gamergraf folder, this will run the 'docker-compose down' script which stops the service and removes the containers.  
 1.2: Delete the folder the gamegraf project is stored in, this will delete the databases and all files related to the project.  
-1.3: Uninstall docker  
+1.3: Uninstall docker from your PC  
+  
 ### Instrumentation
 2.1: Uninstall MSI Afterburner Remote Server  
 2.2: Unisntall MSI Afterburner  
