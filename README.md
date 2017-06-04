@@ -16,11 +16,12 @@ The instrumentation software has to run on the computer you want monitored, and 
   
 ### Backend Software
 #### Docker 
-I have developed and tested this docker container on both CentOS 7.3 and Windows 10 using the new Docker for Windows that leverages the advanced Hyper-V functionality, I am not sure if the legacy Windows Docker applications would work without modifications. It will likely work on all linux operating systems that meet the modern docker release requirements, and will probably also work on Mac OSX.  
+I have developed and tested this docker container on both CentOS 7.3 and Windows 10 using the new Docker for Windows that leverages the advanced Hyper-V functionality, the legacy Docker Toolbox for Windows requires a bit more work. It will likely work on all linux operating systems that meet the modern docker release requirements, and will probably also work on Mac OSX.  
 Docker Compose is also required.  
   
 Docker for Windows 10, which includes Docker Compose - https://download.docker.com/win/stable/InstallDocker.msi  
-*Note you need to be sure to configure Docker for Windows to share whatever drive you want to run the grafana package from, and some Antivirus applications process and/or network protection can cause some issues enabling this.
+*Note you need to be sure to configure Docker for Windows to share whatever drive you want to run the grafana package from, and some Antivirus applications process and/or network protection can cause some issues enabling this.*  
+Legacy Docker Toolbox for Windows - https://www.docker.com/products/docker-toolbox  
 Docker for Linux installation instructions - https://docs.docker.com/engine/getstarted/step_one/#step-2-install-docker  
 Docker Compose for linux - https://github.com/docker/compose/releases  
 Gamergraf docker container - https://github.com/ragesaq/gamergraf/archive/master.zip
