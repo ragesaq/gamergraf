@@ -35,7 +35,7 @@ The docker container that runs the backend consists of [Grafana](http://www.graf
 ###  Instrumentation software
 #### MSI Afterburner
 You need to run this for the monitoring services provided - http://download.msi.com/uti_exe/vga/MSIAfterburnerSetup.zip  
-*Note: If you have a 10xx series card I would recommend at least Afterburner v4.4 beta 9 - http://office.guru3d.com/afterburner/MSIAfterburnerSetup440Beta9.rar
+*Note: If you have a 10xx series card I would recommend at least Afterburner v4.4 beta 9 - http://office.guru3d.com/afterburner/MSIAfterburnerSetup440Beta9.rar  
 *Note 2: If you don't have an MSI card you might want to check this thread for a custom voltage control mapping file - http://www.overclock.net/t/1625653/how-to-get-voltage-slider-in-afterburner-working-on-a-1080-ti
 
   
