@@ -1,7 +1,7 @@
 # Graphite stack
 
 # Build from Ubuntu base
-FROM ragesaq/base
+FROM ubuntu:18.04
 
 # This suppresses a bunch of annoying warnings from debconf
 ENV DEBIAN_FRONTEND noninteractive
@@ -9,7 +9,28 @@ ENV DEBIAN_FRONTEND noninteractive
 # Install Dependencies
 RUN \
     apt-get update -y && \
-    apt-get install -y --no-install-recommends python-minimal supervisor libffi6 libcairo2 collectd curl libcurl3 libcurl3-gnutls libxml2 libxml2-utils xml-core &&\
+    apt-get install -y vim\
+     supervisor\
+     collectd\
+     curl\
+     expect\
+     g++\
+     libcairo2\
+     libcairo2-dev \
+     libcurl4\
+     libffi6\
+     libffi-dev \
+     libxml2\
+     libxml2-utils\
+     pkg-config\
+     python-cairo\
+     python-dev\
+     python-flup\
+     python-minimal\
+     python-six\
+     python-setuptools\
+     python-pip\
+     xml-core &&\
     apt-get clean && \
     rm -rf /var/lib/apt/lists/
 
@@ -17,20 +38,17 @@ RUN \
 # Install devel packages only to allow compilation on PIP install
 
 RUN \
-    apt-get update -y && \
-    apt-get install -y --no-install-recommends \
-        g++ \
-        python-dev \
-        python-six \
-        libcairo2-dev \
-        libffi-dev \
-        python-pip \
-    && \
+export PYTHONPATH="/opt/graphite/lib/:/opt/graphite/webapp/" \
+&& \
+    pip install --no-binary=:all: https://github.com/graphite-project/whisper/tarball/master \
+&& \
+    pip install --no-binary=:all: https://github.com/graphite-project/carbon/tarball/master \
+&& \
+    pip install --no-binary=:all: https://github.com/graphite-project/graphite-web/tarball/master \
+&& \
     pip install \
         gunicorn \
         graphite-api[sentry] \
-        whisper \
-        carbon \
     && \
     apt-get purge --auto-remove -y \
         g++ \
